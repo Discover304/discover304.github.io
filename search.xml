@@ -4,6 +4,72 @@
   
     
     <entry>
+      <title>Python 爬虫</title>
+      <link href="2021/08/02/39-python-%E7%88%AC%E8%99%AB/"/>
+      <url>2021/08/02/39-python-%E7%88%AC%E8%99%AB/</url>
+      
+        <content type="html"><![CDATA[<p>相较于之前写过的爬去B站动态的javav程序，Python明显简单很多。其中有一个很重要的原因，我们的java程序写的是一个实时的爬虫，一个监控，而这次接触的Python爬虫很明显仅仅只需要爬下来就可以了。</p><h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2><p><a href="https://blog.csdn.net/zhh763984017/article/details/119063252?utm_source=app&amp;app_version=4.12.0%7C">爬取图片html，主要是</a></p><p><a href="https://blog.csdn.net/zhh763984017/article/details/119063252?utm_source=app&amp;app_version=4.12.0">API calling json</a></p><p><a href="https://blog.csdn.net/weixin_54733110/article/details/117935299?utm_source=app&amp;app_version=4.12.0">微博 json，会翻页</a></p><h2 id="主要框架"><a class="markdownIt-Anchor" href="#主要框架"></a> 主要框架</h2><ul><li>post request</li><li>resolve received files/data in form of json/html/xml</li><li>save to local</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Library </category>
+          
+          <category> ToolBook </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> 参考 </tag>
+            
+            <tag> 模板 </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MP3 to Wav to Midi</title>
+      <link href="2021/08/02/38-MP3-wav-midi/"/>
+      <url>2021/08/02/38-MP3-wav-midi/</url>
+      
+        <content type="html"><![CDATA[<p>Converting mp3 to wav to midi is a task that extract notes from original mp3 files by computer.</p><h2 id="reference-project"><a class="markdownIt-Anchor" href="#reference-project"></a> reference project</h2><ul><li><a href="https://github.com/NFJones/audio-to-midi">audio/wav to midi</a>​</li></ul><h2 id="mp3-to-wav"><a class="markdownIt-Anchor" href="#mp3-to-wav"></a> mp3 to wav</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydub <span class="keyword">import</span> AudioSegment</span><br><span class="line"></span><br><span class="line"><span class="comment"># files                                                                       </span></span><br><span class="line">src = <span class="string">&quot;/dir/to/the/file.mp3&quot;</span></span><br><span class="line">dst = <span class="string">&quot;/dir/to/result/file.wav&quot;</span></span><br><span class="line">                                                    </span><br><span class="line">audSeg = AudioSegment.from_mp3(src)</span><br><span class="line">audSeg.export(dst, <span class="built_in">format</span>=<span class="string">&quot;wav&quot;</span>)</span><br></pre></td></tr></table></figure><h2 id="wav-to-midi"><a class="markdownIt-Anchor" href="#wav-to-midi"></a> wav to midi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install -r ./requirements.txt</span><br><span class="line">python3 ./setup.py install</span><br><span class="line"></span><br><span class="line">audio-to-midi /path/to/audio/file.wav -b 120 -t 250 -s</span><br></pre></td></tr></table></figure><h2 id="play-midi"><a class="markdownIt-Anchor" href="#play-midi"></a> play midi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install timidity timidity-interfaces-extra</span><br><span class="line"></span><br><span class="line">timidity -ig</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Library </category>
+          
+          <category> ToolBook </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UoE UG3 Inf Course Research</title>
       <link href="2021/07/18/37-UG3-course-research/"/>
       <url>2021/07/18/37-UG3-course-research/</url>

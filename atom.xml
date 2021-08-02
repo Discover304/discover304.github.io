@@ -6,7 +6,7 @@
   <link href="http://discover304.github.io/atom.xml" rel="self"/>
   
   <link href="http://discover304.github.io/"/>
-  <updated>2021-07-18T14:05:31.438Z</updated>
+  <updated>2021-08-02T00:50:33.461Z</updated>
   <id>http://discover304.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 爬虫</title>
+    <link href="http://discover304.github.io/2021/08/02/39-python-%E7%88%AC%E8%99%AB/"/>
+    <id>http://discover304.github.io/2021/08/02/39-python-%E7%88%AC%E8%99%AB/</id>
+    <published>2021-08-02T00:42:50.000Z</published>
+    <updated>2021-08-02T00:50:33.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>相较于之前写过的爬去B站动态的javav程序，Python明显简单很多。其中有一个很重要的原因，我们的java程序写的是一个实时的爬虫，一个监控，而这次接触的Python爬虫很明显仅仅只需要爬下来就可以了。</p><h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2><p><a href="https://blog.csdn.net/zhh763984017/article/details/119063252?utm_source=app&amp;app_version=4.12.0%7C">爬取图片html，主要是</a></p><p><a href="https://blog.csdn.net/zhh763984017/article/details/119063252?utm_source=app&amp;app_version=4.12.0">API calling json</a></p><p><a href="https://blog.csdn.net/weixin_54733110/article/details/117935299?utm_source=app&amp;app_version=4.12.0">微博 json，会翻页</a></p><h2 id="主要框架"><a class="markdownIt-Anchor" href="#主要框架"></a> 主要框架</h2><ul><li>post request</li><li>resolve received files/data in form of json/html/xml</li><li>save to local</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;相较于之前写过的爬去B站动态的javav程序，Python明显简单很多。其中有一个很重要的原因，我们的java程序写的是一个实时的爬虫，一个监控，而这次接触的Python爬虫很明显仅仅只需要爬下来就可以了。&lt;/p&gt;
+&lt;h2 id=&quot;参考文献&quot;&gt;&lt;a class=&quot;markd</summary>
+      
+    
+    
+    
+    <category term="Library" scheme="http://discover304.github.io/categories/Library/"/>
+    
+    <category term="ToolBook" scheme="http://discover304.github.io/categories/Library/ToolBook/"/>
+    
+    
+    <category term="技术" scheme="http://discover304.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="参考" scheme="http://discover304.github.io/tags/%E5%8F%82%E8%80%83/"/>
+    
+    <category term="模板" scheme="http://discover304.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+    <category term="学习" scheme="http://discover304.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="记录" scheme="http://discover304.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MP3 to Wav to Midi</title>
+    <link href="http://discover304.github.io/2021/08/02/38-MP3-wav-midi/"/>
+    <id>http://discover304.github.io/2021/08/02/38-MP3-wav-midi/</id>
+    <published>2021-08-02T00:31:16.000Z</published>
+    <updated>2021-08-02T00:41:28.775Z</updated>
+    
+    <content type="html"><![CDATA[<p>Converting mp3 to wav to midi is a task that extract notes from original mp3 files by computer.</p><h2 id="reference-project"><a class="markdownIt-Anchor" href="#reference-project"></a> reference project</h2><ul><li><a href="https://github.com/NFJones/audio-to-midi">audio/wav to midi</a>​</li></ul><h2 id="mp3-to-wav"><a class="markdownIt-Anchor" href="#mp3-to-wav"></a> mp3 to wav</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydub <span class="keyword">import</span> AudioSegment</span><br><span class="line"></span><br><span class="line"><span class="comment"># files                                                                       </span></span><br><span class="line">src = <span class="string">&quot;/dir/to/the/file.mp3&quot;</span></span><br><span class="line">dst = <span class="string">&quot;/dir/to/result/file.wav&quot;</span></span><br><span class="line">                                                    </span><br><span class="line">audSeg = AudioSegment.from_mp3(src)</span><br><span class="line">audSeg.export(dst, <span class="built_in">format</span>=<span class="string">&quot;wav&quot;</span>)</span><br></pre></td></tr></table></figure><h2 id="wav-to-midi"><a class="markdownIt-Anchor" href="#wav-to-midi"></a> wav to midi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install -r ./requirements.txt</span><br><span class="line">python3 ./setup.py install</span><br><span class="line"></span><br><span class="line">audio-to-midi /path/to/audio/file.wav -b 120 -t 250 -s</span><br></pre></td></tr></table></figure><h2 id="play-midi"><a class="markdownIt-Anchor" href="#play-midi"></a> play midi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install timidity timidity-interfaces-extra</span><br><span class="line"></span><br><span class="line">timidity -ig</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Converting mp3 to wav to midi is a task that extract notes from original mp3 files by computer.&lt;/p&gt;
+&lt;h2 id=&quot;reference-project&quot;&gt;&lt;a class=&quot;</summary>
+      
+    
+    
+    
+    <category term="Library" scheme="http://discover304.github.io/categories/Library/"/>
+    
+    <category term="ToolBook" scheme="http://discover304.github.io/categories/Library/ToolBook/"/>
+    
+    
+    <category term="技术" scheme="http://discover304.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="学习" scheme="http://discover304.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="记录" scheme="http://discover304.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>UoE UG3 Inf Course Research</title>
@@ -615,80 +681,6 @@
     <id>http://discover304.github.io/2021/02/22/26-1-SEPP-term-collection2/</id>
     <published>2021-02-22T09:52:32.000Z</published>
     <updated>2021-02-25T00:52:08.557Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2><p>This note collect all terms occur in SEPP Lecture 6/7/9. It would be helpful to recap what has learnt and what has already been abstracted away.</p><h2 id="pool-of-atomic-terms"><a class="markdownIt-Anchor" href="#pool-of-atomic-terms"></a> Pool of atomic terms</h2><p>plan-driven development process, heavy documentation, formal documentation, iteration, agile development process, individual, interaction, working software, customer collaboration, responding to change, design, implementation, unfinished feature, requirement engineering, requirement specification document, omnipresent, details</p><p>software project, long-lived system, software product, developing team, small-medium sized system, several potential customer, speedy delivery, feature</p><p>elicitation, interview, survey, facilitated meeting, informal user analysis, informal user discussion</p><p>persona, personalisation, name, personal circumstance, stock photograph, job, education, background, technical skill, experience, relevance, shared vision, key system feature</p><p>scenario, narrative, context, user, perspective of the user, real users, role, responsibility, high-level scenario, use-case scenario, brief statement, overall objective, activity, current system, identified problem, specific details, reality, team member, user, expert, brainstorming, shared understanding, facilitate communication, design creativity, specification</p><p>user story, sequence of interaction, format</p><p>trade-off, simplicity, functionality, familiarity, novelty, automation, control, feature creep, action, action verbs, phrases, simple list, input, action, output, description, constraint, comment, user needs, options</p><p>output, model, UML, Simulink, graphical model, executable model, written document, record reasons, decision, good design, known requirement, future requirements, implementers, existing technology, reusable components, human angle, situation-dependency, OO design, functional design, OO programmer, functional programmer, design choices, future changes, different levels, subsystems, classes, responsibility, interface, message, order</p><p>architecture, fundamental influence, non-functional characteristics, non-functional attribute, component, database, maintainability, resilience effect, fundamental organization, software system, component, relationship, environment, principles, design, evolution, related system, named software unit, coherent set of functionality, collection of services, coherent unit of functionality, module, named set of components</p><p>architectural design, product lifetime, software reuse, number of users, software compatibility, planned schedule, team capacity, budget, large-scale components, cross-cutting concerns, major concern, complexity, local data, separation of concerns, related functionality, implement once, stable interface</p><p>distribution architecture, client-server architecture, web-based software product, mobile software product, client, load balancer, server, web, database, Model-View-Controller pattern, MVC, multi-tier client server architecture, object-oriented approach, shared database, structured data, concurrent update, business system, local servers, service-oriented architecture, change regularly, scalability, resilience to failure, peer to peer architecture, message bus architecture</p><p>technological consideration, database, delivery platform, server, open source platform, development technology</p><p>detailed design, design principle, class diagram, cohesion, understandability, maintainability, reliability, coupling, abstraction, encapsulation, information hiding, separation of interface, separation of implementation, public interface, decomposition, modularisation</p><h2 id="key-linkage-between-atomic-terms"><a class="markdownIt-Anchor" href="#key-linkage-between-atomic-terms"></a> Key linkage between atomic terms</h2><ol><li>term ‘feature’ <strong>aims to distinguish</strong> from ‘requirement’ coming from a customer (in software project), <strong>but similar</strong> in meaning.</li><li>personas <strong>will overlap</strong>, Sommerville advises using max 5 personas.</li><li>software product are <strong>recommended</strong> to use high-level scenario, <strong>different</strong> to use case scenario.</li><li>team member <strong>works individually</strong> on a subset of scenarios.</li><li><strong>get</strong> user involved in the development.</li><li>Sommerville recommends using 3-4 scenarios/persona.</li><li>requirement <strong>need</strong> to be: independent, coherent, relevant.</li><li>user stories may immediately <strong>suggest</strong> requirements.</li><li><strong>start</strong> by using product, <strong>but then</strong> think creatively about other/additional more efficient and interesting options.</li><li>design <strong>is</strong> the process of deciding how software will <strong>meet</strong> the requirements. Usually <strong>exclude</strong> detailed coding level.</li><li>maintainability <strong>vs</strong> performance</li><li>security <strong>vs</strong> usability</li><li>availability <strong>vs</strong> time to market and cost</li><li>major concern of designing architecture <strong>is</strong> complexity due to the number of components and their relationship, the latter <strong>increasing</strong> exponentially.</li><li>multi-tier client-server architecture <strong>is</strong> a client-server system with a shared database.</li><li>technologies need to be decided, since architectural design, as changing them later is difficult and expensive.</li><li></li></ol><h2 id="rule-to-categorize-atomic-terms"><a class="markdownIt-Anchor" href="#rule-to-categorize-atomic-terms"></a> Rule to categorize atomic terms</h2><ol><li>How close they link with others.</li><li>Are they belong to some existing categories.</li><li>No need to explicitly classify all these terms into different groups.</li></ol><h2 id="unfamiliar-terms"><a class="markdownIt-Anchor" href="#unfamiliar-terms"></a> Unfamiliar terms</h2><p>human angle</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;abstract&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#abstract&quot;&gt;&lt;/a&gt; Abstract&lt;/h2&gt;
-&lt;p&gt;This note collect all terms occur in SEPP Lecture 6/7/</summary>
-      
-    
-    
-    
-    <category term="University" scheme="http://discover304.github.io/categories/University/"/>
-    
-    <category term="LectureNote" scheme="http://discover304.github.io/categories/University/LectureNote/"/>
-    
-    <category term="Software Engineering And Professional Practice" scheme="http://discover304.github.io/categories/University/LectureNote/Software-Engineering-And-Professional-Practice/"/>
-    
-    
-    <category term="积累" scheme="http://discover304.github.io/tags/%E7%A7%AF%E7%B4%AF/"/>
-    
-    <category term="学习" scheme="http://discover304.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="系统" scheme="http://discover304.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="整理" scheme="http://discover304.github.io/tags/%E6%95%B4%E7%90%86/"/>
-    
-    <category term="软件工程" scheme="http://discover304.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Professional Issues Note: Organisations 施工中~</title>
-    <link href="http://discover304.github.io/2021/02/22/26-2-PI-Organisations/"/>
-    <id>http://discover304.github.io/2021/02/22/26-2-PI-Organisations/</id>
-    <published>2021-02-22T09:52:32.000Z</published>
-    <updated>2021-03-07T00:58:24.009Z</updated>
-    
-    <content type="html"><![CDATA[<p>绝赞偷懒中</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;绝赞偷懒中&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="University" scheme="http://discover304.github.io/categories/University/"/>
-    
-    <category term="LectureNote" scheme="http://discover304.github.io/categories/University/LectureNote/"/>
-    
-    <category term="Software Engineering And Professional Practice" scheme="http://discover304.github.io/categories/University/LectureNote/Software-Engineering-And-Professional-Practice/"/>
-    
-    
-    <category term="积累" scheme="http://discover304.github.io/tags/%E7%A7%AF%E7%B4%AF/"/>
-    
-    <category term="学习" scheme="http://discover304.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="系统" scheme="http://discover304.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="整理" scheme="http://discover304.github.io/tags/%E6%95%B4%E7%90%86/"/>
-    
-    <category term="评论" scheme="http://discover304.github.io/tags/%E8%AF%84%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Software Engineering Terms Collection 2</title>
-    <link href="http://discover304.github.io/2021/02/22/27-SEPP-term-collection2/"/>
-    <id>http://discover304.github.io/2021/02/22/27-SEPP-term-collection2/</id>
-    <published>2021-02-22T09:52:32.000Z</published>
-    <updated>2021-02-23T06:22:44.484Z</updated>
     
     <content type="html"><![CDATA[<h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2><p>This note collect all terms occur in SEPP Lecture 6/7/9. It would be helpful to recap what has learnt and what has already been abstracted away.</p><h2 id="pool-of-atomic-terms"><a class="markdownIt-Anchor" href="#pool-of-atomic-terms"></a> Pool of atomic terms</h2><p>plan-driven development process, heavy documentation, formal documentation, iteration, agile development process, individual, interaction, working software, customer collaboration, responding to change, design, implementation, unfinished feature, requirement engineering, requirement specification document, omnipresent, details</p><p>software project, long-lived system, software product, developing team, small-medium sized system, several potential customer, speedy delivery, feature</p><p>elicitation, interview, survey, facilitated meeting, informal user analysis, informal user discussion</p><p>persona, personalisation, name, personal circumstance, stock photograph, job, education, background, technical skill, experience, relevance, shared vision, key system feature</p><p>scenario, narrative, context, user, perspective of the user, real users, role, responsibility, high-level scenario, use-case scenario, brief statement, overall objective, activity, current system, identified problem, specific details, reality, team member, user, expert, brainstorming, shared understanding, facilitate communication, design creativity, specification</p><p>user story, sequence of interaction, format</p><p>trade-off, simplicity, functionality, familiarity, novelty, automation, control, feature creep, action, action verbs, phrases, simple list, input, action, output, description, constraint, comment, user needs, options</p><p>output, model, UML, Simulink, graphical model, executable model, written document, record reasons, decision, good design, known requirement, future requirements, implementers, existing technology, reusable components, human angle, situation-dependency, OO design, functional design, OO programmer, functional programmer, design choices, future changes, different levels, subsystems, classes, responsibility, interface, message, order</p><p>architecture, fundamental influence, non-functional characteristics, non-functional attribute, component, database, maintainability, resilience effect, fundamental organization, software system, component, relationship, environment, principles, design, evolution, related system, named software unit, coherent set of functionality, collection of services, coherent unit of functionality, module, named set of components</p><p>architectural design, product lifetime, software reuse, number of users, software compatibility, planned schedule, team capacity, budget, large-scale components, cross-cutting concerns, major concern, complexity, local data, separation of concerns, related functionality, implement once, stable interface</p><p>distribution architecture, client-server architecture, web-based software product, mobile software product, client, load balancer, server, web, database, Model-View-Controller pattern, MVC, multi-tier client server architecture, object-oriented approach, shared database, structured data, concurrent update, business system, local servers, service-oriented architecture, change regularly, scalability, resilience to failure, peer to peer architecture, message bus architecture</p><p>technological consideration, database, delivery platform, server, open source platform, development technology</p><p>detailed design, design principle, class diagram, cohesion, understandability, maintainability, reliability, coupling, abstraction, encapsulation, information hiding, separation of interface, separation of implementation, public interface, decomposition, modularisation</p><h2 id="key-linkage-between-atomic-terms"><a class="markdownIt-Anchor" href="#key-linkage-between-atomic-terms"></a> Key linkage between atomic terms</h2><ol><li>term ‘feature’ <strong>aims to distinguish</strong> from ‘requirement’ coming from a customer (in software project), <strong>but similar</strong> in meaning.</li><li>personas <strong>will overlap</strong>, Sommerville advises using max 5 personas.</li><li>software product are <strong>recommended</strong> to use high-level scenario, <strong>different</strong> to use case scenario.</li><li>team member <strong>works individually</strong> on a subset of scenarios.</li><li><strong>get</strong> user involved in the development.</li><li>Sommerville recommends using 3-4 scenarios/persona.</li><li>requirement <strong>need</strong> to be: independent, coherent, relevant.</li><li>user stories may immediately <strong>suggest</strong> requirements.</li><li><strong>start</strong> by using product, <strong>but then</strong> think creatively about other/additional more efficient and interesting options.</li><li>design <strong>is</strong> the process of deciding how software will <strong>meet</strong> the requirements. Usually <strong>exclude</strong> detailed coding level.</li><li>maintainability <strong>vs</strong> performance</li><li>security <strong>vs</strong> usability</li><li>availability <strong>vs</strong> time to market and cost</li><li>major concern of designing architecture <strong>is</strong> complexity due to the number of components and their relationship, the latter <strong>increasing</strong> exponentially.</li><li>multi-tier client-server architecture <strong>is</strong> a client-server system with a shared database.</li><li>technologies need to be decided, since architectural design, as changing them later is difficult and expensive.</li><li></li></ol><h2 id="rule-to-categorize-atomic-terms"><a class="markdownIt-Anchor" href="#rule-to-categorize-atomic-terms"></a> Rule to categorize atomic terms</h2><ol><li>How close they link with others.</li><li>Are they belong to some existing categories.</li><li>No need to explicitly classify all these terms into different groups.</li></ol><h2 id="unfamiliar-terms"><a class="markdownIt-Anchor" href="#unfamiliar-terms"></a> Unfamiliar terms</h2><p>human angle</p>]]></content>
     
